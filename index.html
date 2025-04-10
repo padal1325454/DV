@@ -11,14 +11,17 @@
             font-family: 'Merriweather', serif; /* Set the font to Merriweather */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-image: url('./Screenshot 2025-04-08 at 9.02.08 PM.png'); /* Use relative path */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            background-position: center center; /* Center the image */
+            background-attachment: fixed; /* Keep the background fixed during scrolling */
             color: #333;
         }
 
         /* Dashboard Background Image and Full Height */
         #dashboard-section {
             position: relative;
-            background-image: url('/Users/ravikiran/Downloads/mental_health_dashboard/WhatsApp Image 2025-04-09 at 10.00.29.jpeg'); /* Ensure the image file exists in the 'images' folder */
+            background-image: url('./Screenshot 2025-04-08 at 9.02.08 PM.png'); /* Use relative path */
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -38,7 +41,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.6); /* Light overlay for better text visibility */
+            background: rgba(255, 255, 255, 0.9); /* Light overlay for better text visibility */
             z-index: -1; /* Place behind content */
         }
 
@@ -47,6 +50,12 @@
             font-weight: bold;
             margin-bottom: 20px;
             z-index: 1;
+            text-align: center; /* Ensure the title is horizontally centered */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100px; /* Adjust height if needed */
+            color: black; /* Change title color to black */
         }
 
         section {
@@ -78,7 +87,7 @@
 
         /* Visualizations Section Background Image */
         #visualizations-section {
-            background-image: url('./images/visualizations_background.webp'); /* Updated to relative path */
+            background-image: url('./czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.webp'); /* Use relative path */
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -146,12 +155,11 @@
 </head>
 <body>
 
-    <header>
-        <h1>Student Mental Health Dashboard</h1>
-    </header>
-
     <!-- Dashboard Section (Initially Visible) -->
     <section id="dashboard-section">
+        <header>
+            <h1>Student Mental Health Dashboard</h1> <!-- Move the header inside the dashboard section -->
+        </header>
         <h2>Project Overview: Student Mental Health Analysis</h2>
         <p>
             This project aims to analyze various mental health factors affecting students, including stress, anxiety, and depression, and their relationship with academic performance, substance use, and access to mental health resources.
@@ -172,17 +180,18 @@
         </section>
 
         <button id="visualization-button" class="button" onclick="showVisualizations()">Go to Visualizations</button>
+        <a href="tableau.html" class="button" style="text-decoration: none; display: inline-block; margin-top: 10px;">Tableau Visualizations</a>
     </section>
 
     <!-- Visualizations Section (Initially Hidden) -->
     <section id="visualizations-section" class="visualization-section">
-        <h1>Student Mental Health Visualizations</h1>
+        <h1 style="color: white;">Student Mental Health Visualizations</h1>
 
         <!-- Visualization 1 -->
         <section class="slide active" id="visualization1">
-            <h2>Visualization 1: Feature Distribution by Gender</h2>
+            <h2>Feature Distribution by Gender</h2>
             <div class="graph">
-                <iframe src="bar_plot.html" width="100%" height="600px"></iframe>
+                <iframe src="./bar_plot.html" width="100%" height="600px" style="border: none;"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 This bar plot visualizes the distribution of various features such as gender, course enrollment, and counseling service use. It reveals that female students use mental health resources more frequently than male students. This suggests that females may be more inclined to seek help, potentially due to social stigma or higher awareness about mental health support. Understanding these patterns can help in identifying gender-based disparities and creating targeted interventions to ensure equal access to mental health services.
@@ -191,9 +200,9 @@
 
         <!-- Visualization 2 -->
         <section class="slide" id="visualization2">
-            <h2>Visualization 2: Correlation Heatmap of Mental Health Factors</h2>
+            <h2>Correlation Heatmap of Mental Health Factors</h2>
             <div class="graph">
-                <iframe src="heatmap.html" width="100%" height="600px"></iframe>
+                <iframe src="./heatmap.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 The correlation heatmap visually represents the relationships between stress, anxiety, depression, and academic performance. Strong correlations between stress, anxiety, and depression suggest that students experiencing higher stress are more likely to suffer from anxiety and depression. This highlights the need for integrated mental health services that address multiple factors simultaneously. Additionally, the mild negative correlation between stress levels and CGPA implies that students with better academic performance may experience lower stress levels.
@@ -202,9 +211,9 @@
 
         <!-- Visualization 3 -->
         <section class="slide" id="visualization3">
-            <h2>Visualization 3: CGPA vs Stress Level</h2>
+            <h2>CGPA vs Stress Level</h2>
             <div class="graph">
-                <iframe src="scatter_plot.html" width="100%" height="600px"></iframe>
+                <iframe src="./scatter_plot.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 This scatter plot investigates the relationship between CGPA and stress levels. The data reveals that students with lower CGPA tend to report higher stress levels. This suggests that students struggling academically may face additional emotional and mental health challenges. It underscores the importance of providing academic support and stress management resources for students with lower academic performance to reduce their overall stress levels and improve their well-being.
@@ -213,9 +222,9 @@
 
         <!-- Visualization 4 -->
         <section class="slide" id="visualization4">
-            <h2>Visualization 4: Substance Use Distribution</h2>
+            <h2>Substance Use Distribution</h2>
             <div class="graph">
-                <iframe src="pie_chart.html" width="100%" height="600px"></iframe>
+                <iframe src="./pie_chart.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 The pie chart shows the distribution of substance use among students. It highlights that a significant number of students engage in occasional or regular use of alcohol or recreational drugs. The prevalence of substance use raises concerns about its impact on mental health, as substance use is often linked with anxiety, depression, and stress. Addressing this issue by promoting healthy coping mechanisms and providing education on the risks of substance use can significantly improve students' mental well-being.
@@ -224,9 +233,9 @@
 
         <!-- Visualization 5 -->
         <section class="slide" id="visualization5">
-            <h2>Visualization 5: Stress Level Trend by Age</h2>
+            <h2>Stress Level Trend by Age</h2>
             <div class="graph">
-                <iframe src="line_chart.html" width="100%" height="600px"></iframe>
+                <iframe src="./line_chart.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 This line chart illustrates how stress levels change with age. It shows that older students report higher stress levels, which could be due to increased academic pressures, career preparations, and family responsibilities. The findings suggest that stress management programs should be tailored to students at different stages of their academic journey, with special attention given to older students who may face additional stressors beyond academics.
@@ -235,9 +244,9 @@
 
         <!-- Visualization 6 -->
         <section class="slide" id="visualization6">
-            <h2>Visualization 6: Histogram of Stress Level</h2>
+            <h2>Histogram of Stress Level</h2>
             <div class="graph">
-                <iframe src="histogram_stress.html" width="100%" height="600px"></iframe>
+                <iframe src="./histogram_stress.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 The histogram displays the distribution of stress levels among students. It shows that a large proportion of students report moderate to high stress levels, which indicates a widespread issue. This suggests that mental health resources should be accessible and proactive, especially for students who fall into the high-stress category. The data calls for university-wide mental health initiatives to help manage stress across the student population.
@@ -246,9 +255,9 @@
 
         <!-- Visualization 7 -->
         <section class="slide" id="visualization7">
-            <h2>Visualization 7: Histogram of CGPA</h2>
+            <h2>Histogram of CGPA</h2>
             <div class="graph">
-                <iframe src="histogram_cgpa.html" width="100%" height="600px"></iframe>
+                <iframe src="./histogram_cgpa.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 The histogram illustrates the distribution of CGPA scores among students. Most students fall into the mid-range CGPA, with fewer students achieving very high or low scores. This distribution can help identify students who may require additional academic support. Further research could investigate how CGPA relates to mental health issues such as anxiety and stress, especially among students with low academic performance.
@@ -257,9 +266,9 @@
 
         <!-- Visualization 8 -->
         <section class="slide" id="visualization8">
-            <h2>Visualization 8: Box Plot for Stress Level by Gender</h2>
+            <h2>Box Plot for Stress Level by Gender</h2>
             <div class="graph">
-                <iframe src="boxplot_stress.html" width="100%" height="600px"></iframe>
+                <iframe src="./boxplot_stress.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 This box plot compares stress levels across genders. The data shows that females report higher stress levels compared to males, with a wider range of stress levels among females. This may indicate that females experience a greater variability in stress, possibly due to different academic and social pressures. Addressing gender-specific stressors through targeted support can help reduce these disparities and improve the overall mental health of female students.
@@ -268,9 +277,9 @@
 
         <!-- Visualization 9 -->
         <section class="slide" id="visualization9">
-            <h2>Visualization 9: Correlation Matrix for Stress, Anxiety, and Depression</h2>
+            <h2>Correlation Matrix for Stress, Anxiety, and Depression</h2>
             <div class="graph">
-                <iframe src="correlation_matrix.html" width="100%" height="600px"></iframe>
+                <iframe src="./correlation_matrix.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 The correlation matrix shows that stress, anxiety, and depression are strongly correlated, suggesting that tackling one of these factors may help mitigate the others. This insight emphasizes the need for holistic mental health care, where students are provided with integrated services that address multiple mental health challenges simultaneously.
@@ -279,9 +288,9 @@
 
         <!-- Visualization 10 -->
         <section class="slide" id="visualization10">
-            <h2>Visualization 10: Scatter Plot of Age vs CGPA</h2>
+            <h2>Scatter Plot of Age vs CGPA</h2>
             <div class="graph">
-                <iframe src="scatter_age_cgpa.html" width="100%" height="600px"></iframe>
+                <iframe src="./scatter_age_cgpa.html" width="100%" height="600px"></iframe> <!-- Use relative path -->
             </div>
             <p class="description">
                 This scatter plot visualizes the relationship between age and CGPA. It indicates that older students tend to have slightly higher CGPA scores, likely due to increased maturity and experience. However, younger students may experience more stress, leading to lower academic performance. This insight suggests that support programs should be designed to help younger students cope with stress to improve their academic outcomes.
